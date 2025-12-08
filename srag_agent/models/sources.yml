@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: srag_dev
+    database: srag_dev
+    schema: raw
+    description: >
+      "Fontes de dados brutos extraídos do Open DATASUS"
+    tables:
+      - name: srag_raw
+        identifier: srag_raw
+        description: >
+          "Tabela bruta contendo dados de SRAG sem nenhum tratamento."

@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: gold_srag_daily
+    description: >
+      "Agregado diário. Base para o gráfico de últimos 30 dias e cálculo de Growth Rate."
+    columns:
+      - name: data_referencia
+        description: >
+          "Data de início dos sintomas (Eixo X). Deve ser única por dia."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: total_casos
+        description: >
+          "Contagem absoluta de casos no dia."
+        data_tests:
+          - not_null
+
+      - name: taxa_mortalidade_perc
+        description: >
+          "Percentual de óbitos em relação aos casos do dia."
+        data_tests:
+          - not_null
+
+      - name: taxa_aumento_casos_perc
+        description: >
+          "Variação percentual de casos vs dia anterior (Growth Rate)."
+
+  - name: gold_srag_monthly
+    description: >
+      "Agregado mensal. Base para gráfico de tendência de 12 meses e visão macro."
+    columns:
+      - name: mes_referencia
+        description: >
+          "Primeiro dia do mês de referência."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: taxa_aumento_mensal_perc
+        description: >
+          "Variação percentual de casos vs mês anterior (MoM)."
