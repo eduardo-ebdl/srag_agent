@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: silver_srag
+    description: >
+      "Tabela tratada (Silver). Regras de negócio, flags binários (0/1) para métricas 
+      e descrições textuais para o Agente de IA aplicadas."
+    columns:
+      - name: idade_anos
+        description: >
+          "Idade normalizada em anos (fração decimal). Dias e meses foram convertidos."
+        data_tests:
+          - not_null
+
+      - name: diagnostico_final
+        description: >
+          "Classificação textual da doença, traduzida dos códigos numéricos."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Influenza', 'COVID-19', 'Outro Virus Respiratorio', 'Outro Agente Etiologico', 'Nao Especificado', 'Em Investigacao/Outros']
+
+      - name: internado_uti_flag
+        description: >
+          "Flag binário indicando internação em UTI (1=Sim, 0=Não/Ignorado). Usado para KPIs."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+      - name: obito_srag_flag
+        description: >
+          "Flag binário indicando óbito (1=Sim, 0=Não/Outros). Usado para Taxa de Mortalidade."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+      - name: lista_comorbidades
+        description: >
+          "Campo de texto concatenado com todas as comorbidades do paciente. Otimizado para RAG/IA."

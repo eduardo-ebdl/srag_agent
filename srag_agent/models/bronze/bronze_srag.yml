@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: bronze_srag
+    description: >
+      "Tabela bruta com dados selecionados do SIVEP-Gripe (OpenDATASUS). 
+      Contém tipagem forte (casts) aplicada, mas mantém os códigos originais."
+    columns:
+      - name: dt_notific
+        description: >
+          "Data do preenchimento da ficha de notificação. Fundamental para auditoria."
+        data_tests:
+          - not_null
+
+      - name: sem_not
+        description: >
+          "Semana epidemiológica da notificação."
+        data_tests:
+          - not_null
+
+      - name: sg_uf_not
+        description: >
+          "Sigla da Unidade Federativa (UF) onde ocorreu a notificação."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG',
+               'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']
+
+      - name: cs_sexo
+        description: >
+          "Sexo do paciente (M=Masculino, F=Feminino, I=Ignorado)."
+        data_tests:
+          - accepted_values:
+              values: ['M', 'F', 'I']
+
+      - name: vacina_cov
+        description: >
+          "Código indicando vacinação COVID (1=Sim, 2=Não, 9=Ignorado)."
