@@ -32,7 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   srag_agent:
     bronze:
-      +materialized: view
+      +materialized: ephemeral
       +schema: bronze
     silver:
       +materialized: table
