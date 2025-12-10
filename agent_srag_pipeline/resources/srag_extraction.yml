@@ -1,0 +1,39 @@
+resources:
+  jobs:
+    extract_srag:
+      name: extract_srag
+
+      schedule:
+        quartz_cron_expression: '0 0 12 16 * ? *'
+        timezone_id: 'America/Sao_Paulo'
+      
+      email_notifications:
+        on_failure: ${var.email_notifications}
+
+      tasks:
+        - task_key: extract_srag_task
+          notebook_task:
+            notebook_path: /Shared/Notebooks/Extract
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+              target_years: 2024,2025
+          environment_key: default
+
+        - task_key: load_srag_task
+          notebook_task:
+            notebook_path: /Shared/Notebooks/Load
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+              table_name: srag_raw
+          depends_on:
+            - task_key: "extract_srag_task"
+          environment_key: default
+
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "4"
+            dependencies:
+              - beautifulsoup4
