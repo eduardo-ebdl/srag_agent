@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-core
+langgraph
+databricks-langchain
+tavily-python
+matplotlib
+pandas
+mlflow
+pyspark
