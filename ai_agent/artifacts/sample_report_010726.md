@@ -1,12 +1,14 @@
+### Análise dos Dados Internos (DataSUS)
+- Total de casos: 4
+- Taxa de mortalidade: Não houve registro de óbitos no período analisado.
+- A variação percentual dos casos foi de redução de 33.33%.
+- Gráficos de tendência anexados ao volume.
 
-## 📊 Análise dos Dados Internos (DataSUS)
-O volume de novos casos registrou uma queda de 10,47%. Em relação às taxas, a mortalidade está em 10,86%, a ocupação de UTI em 32,36% e a vacinação de pacientes em 90,81%. Gráficos de tendência anexados ao volume.
+### Panorama Global
+- Há um aumento significativo na atividade de vírus respiratórios nos EUA, com aumento nos casos de flu e outras síndromes respiratórias.
 
-## 🌍 Panorama Global
-A temporada de gripe de 2025-26 foi classificada como moderadamente severa pelo CDC, com pelo menos 11 milhões de casos relatados nos Estados Unidos. A atividade de influenza permaneceu elevada e aumentou na última semana de dezembro, com 33.301 pacientes com influenza admitidos em hospitais.
+### Cenário Brasil (InfoGripe/Fiocruz)
+- O Boletim InfoGripe Fiocruz indica níveis altos ou muito altos de atividade de flu em 32 estados e jurisdições.
 
-## 🇧🇷 Cenário Brasil (InfoGripe/Fiocruz)
-A atividade de influenza está elevada no Brasil, com um número significativo de hospitalizações. O CDC relatou uma temporada de gripe moderadamente severa nos EUA para 2025-26, com pelo menos 11 milhões de casos, 63.000 hospitalizações e 2.700 mortes.
-
-## 🚀 Conclusão Técnica
-Considerando os dados nacionais e globais, é recomendável manter a vigilância epidemiológica e promover medidas de prevenção, como a vacinação, para mitigar a disseminação da gripe e da SRAG.
+### Conclusão Técnica
+- Os dados são preliminares e podem sofrer alterações devido a possíveis atrasos de notificação. É importante manter vigilância sobre a evolução dos casos de SRAG e das atividades de vírus respiratórios, considerando o contexto epidemiológico atual.
