@@ -1,4 +1,4 @@
-# SRAG Data Engineering (dbt)
+# SRAG - dbt
 > **Transformação e Modelagem de Dados Epidemiológicos no Lakehouse**
 
 Este módulo é responsável pela **Engenharia de Dados** do projeto. Utiliza **dbt Core** para transformar os dados brutos do OpenDataSUS em tabelas confiáveis para o consumo do Agente de IA.
