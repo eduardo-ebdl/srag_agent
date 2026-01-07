@@ -40,7 +40,7 @@ with
             , cast(obesidade as int) as obesidade -- Obesidade
             , cast(pneumopati as int) as pneumopati -- Doença Pulmonar
             , cast(imunodepre as int) as imunodepre -- Imunodepressão
-        from {{ source('srag_dev', 'srag_raw') }}
+        from {{ source('srag_prod', 'srag_raw') }}
     )
 
 select *

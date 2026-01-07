@@ -11,3 +11,13 @@ sources:
         identifier: srag_raw
         description: >
           "Tabela bruta contendo dados de SRAG sem nenhum tratamento."
+  - name: srag_prod
+    database: srag_prod
+    schema: raw
+    description: >
+      "Fontes de dados brutos extraídos do Open DATASUS"
+    tables:
+      - name: srag_raw
+        identifier: srag_raw
+        description: >
+          "Tabela bruta contendo dados de SRAG sem nenhum tratamento."

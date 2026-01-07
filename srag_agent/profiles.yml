@@ -4,17 +4,17 @@ srag_agent:
     dev:
       type: databricks
       catalog: srag_dev
-      schema: "{{ var('DBT_SCHEMA') }}"
-      host: "{{ var('DATABRICKS_HOST') }}"
-      http_path: "{{ var('DATABRICKS_HTTP_PATH') }}"
-      token: "{{ var('DATABRICKS_TOKEN') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+      host: "{{ env_var('DATABRICKS_HOST') }}"
+      http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
       threads: 1
 
     prod:
       type: databricks
       catalog: srag_prod
-      schema: "{{ var('DBT_SCHEMA') }}"
-      host: "{{ var('DATABRICKS_HOST') }}"
-      http_path: "{{ var('DATABRICKS_HTTP_PATH') }}"
-      token: "{{ var('DATABRICKS_TOKEN') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
+      host: "{{ env_var('DATABRICKS_HOST') }}"
+      http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
       threads: 1
