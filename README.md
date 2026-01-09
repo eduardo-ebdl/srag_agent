@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Concluído-success)
 ![Stack](https://img.shields.io/badge/Stack-Databricks%20|%20dbt%20|%20LangChain%20|%20Llama3-blue)
 
-Este projeto implementa uma solução *end-to-end* para monitoramento de Síndrome Respiratória Aguda Grave (SRAG) no Brasil. A solução integra Engenharia de Dados moderna (Lakehouse) com um **Agente Autônomo de IA** capaz de analisar dados, gerar gráficos e buscar contexto epidemiológico na web em tempo real.
+Este projeto implementa uma solução *end-to-end* para monitoramento de Síndrome Respiratória Aguda Grave (SRAG) no Brasil. A solução integra o Lakehouse com um **Agente Autônomo de IA** capaz de analisar dados, gerar gráficos e buscar contexto epidemiológico na web em tempo real.
 
 ## Arquitetura do Projeto
 
@@ -51,8 +51,8 @@ O Agente ReAct é orquestrado via **LangGraph**. Ele não apenas "responde pergu
 ###  Governança & Segurança
 Para garantir que a solução seja robusta e segura para o ambiente corporativo:
 
-1.  **Data Quality Gate (Circuit Breaker):** Implementei um validador no início do execução. Se os dados estiverem desatualizados ou inconsistentes (ex: anos errados ou nulos), o Agente **interrompe a execução** imediatamente. Isso previne "alucinações" baseadas em dados ruins.
-2.  **Gestão de Segredos:** Nenhuma chave de API está exposta no código (Hardcoded). Utilização estrita de `dbutils.secrets` para o Token da API Tavily.
+1.  **Data Quality Gate:** Implementei um validador no início do execução. Se os dados estiverem desatualizados ou inconsistentes (ex: anos errados ou nulos), o Agente **interrompe a execução** imediatamente. Isso previne "alucinações" baseadas em dados ruins.
+2.  **Gestão de Segredos:** Nenhuma chave de API está exposta no código. Utilização estrita de `dbutils.secrets` para o Token da API Tavily.
 3.  **Tratamento de PII:** O pipeline dbt remove dados sensíveis (Nomes, CPF, Cartão SUS) já na camada Silver, garantindo conformidade com a LGPD.
 
 ---
@@ -83,7 +83,7 @@ Evidência de que o agente salvou os arquivos de imagem corretamente na pasta de
 ## Como Executar
 
 ### Pré-requisitos
-* Databricks Workspace (com Unity Catalog habilitado).
+* Databricks Workspace.
 * Chave de API Tavily configurada nos Secrets do Databricks:
     * Scope: `my_srag_scope`
     * Key: `tavily_api_key`
